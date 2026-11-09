@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antony Raj A — AI / ML Engineer</title>
+  <meta name="description" content="Portfolio of Antony Raj A — AI & ML Engineer building Agentic AI, LLM, RAG, LangGraph and MCP solutions, plus scalable Python backends for cloud and FinOps.">
+  <meta name="author" content="Antony Raj A">
+  <meta name="theme-color" content="#0a0d12">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Antony Raj A — AI / ML Engineer">
+  <meta property="og:description" content="Agentic AI, LLMs, RAG, LangGraph, MCP and scalable Python backends for cloud operations and FinOps.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Apply saved / system theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        d.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===== Icon sprite ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+    <symbol id="i-git" viewBox="0 0 24 24"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo" aria-label="Antony Raj A — back to top">
+        <span class="logo-mark">AR</span>
+        <span class="logo-text">antony<span class="text-accent">.</span>raj</span>
+      </a>
+
+      <nav id="nav" class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#education">Education</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-resume"><a class="btn btn-primary btn-block" href="assets/Antony_Raj_A_Resume.pdf" download><svg class="icon"><use href="#i-download"/></svg> Download Resume</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle colour theme">
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn-sm btn-outline header-cta" href="assets/Antony_Raj_A_Resume.pdf" download>
+          <svg class="icon"><use href="#i-download"/></svg> Resume
+        </a>
+        <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Open menu">
+          <svg class="icon icon-menu"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== Hero ===== -->
+    <section id="home" class="hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="hero-status reveal"><span class="pulse" aria-hidden="true"></span> AI ML Engineer at Xaasio Pvt Ltd</p>
+          <p class="hero-hello reveal" style="--d:1">Hi, I'm</p>
+          <h1 class="hero-name reveal" style="--d:2">Antony Raj A</h1>
+          <p class="hero-role reveal" style="--d:3">
+            <span class="mono-prompt" aria-hidden="true">&gt;</span>
+            <span class="sr-only">AI / ML Engineer</span>
+            <span id="typed" aria-hidden="true">AI / ML Engineer</span><span class="caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero-lead reveal" style="--d:4">
+            I build <strong>agentic AI systems</strong>, <strong>LLM &amp; RAG applications</strong> and scalable
+            <strong>Python backends</strong> that power cloud operations, FinOps and intelligent automation.
+          </p>
+          <div class="hero-ctas reveal" style="--d:5">
+            <a href="#projects" class="btn btn-primary">View my work <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+            <a href="assets/Antony_Raj_A_Resume.pdf" class="btn btn-ghost" download><svg class="icon"><use href="#i-download"/></svg> Download CV</a>
+          </div>
+          <ul class="hero-meta reveal" style="--d:6">
+            <li><svg class="icon"><use href="#i-pin"/></svg> Coimbatore, India</li>
+            <li><svg class="icon"><use href="#i-mail"/></svg> <a href="mailto:rajmathew821@gmail.com">rajmathew821@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" style="--d:4">
+          <div class="code-window">
+            <div class="code-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="code-file">antony_raj.py</span>
+            </div>
+<pre class="code" tabindex="0" aria-label="Code snippet describing Antony's profile"><code><span class="c-kw">from</span> engineers <span class="c-kw">import</span> <span class="c-cls">Engineer</span>
+
+<span class="c-kw">class</span> <span class="c-cls">AntonyRaj</span>(<span class="c-cls">Engineer</span>):
+    role    = <span class="c-str">"AI / ML Engineer"</span>
+    company = <span class="c-str">"Xaasio Pvt Ltd"</span>
+    since   = <span class="c-num">2023</span>
+    focus   = [<span class="c-str">"Agentic AI"</span>, <span class="c-str">"LLMs"</span>, <span class="c-str">"RAG"</span>,
+               <span class="c-str">"LangGraph"</span>, <span class="c-str">"MCP"</span>]
+    stack   = [<span class="c-str">"Python"</span>, <span class="c-str">"FastAPI"</span>, <span class="c-str">"Django"</span>,
+               <span class="c-str">"Spark"</span>, <span class="c-str">"Kafka"</span>, <span class="c-str">"K8s"</span>]
+
+    <span class="c-kw">def</span> <span class="c-fn">solve</span>(self, incident):
+        <span class="c-com"># detect → investigate → rca → remediate</span>
+        <span class="c-kw">return</span> self.<span class="c-fn">ship</span>(agents=<span class="c-kw">True</span>, scalable=<span class="c-kw">True</span>)</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="stats">
+          <li class="stat reveal" style="--d:1">
+            <span class="stat-num"><span data-count="3">3</span><span class="text-accent">+</span></span>
+            <span class="stat-label">Years building AI &amp; backend systems</span>
+          </li>
+          <li class="stat reveal" style="--d:2">
+            <span class="stat-num"><span data-count="214">214</span></span>
+            <span class="stat-label">Business reports engineered on Hive</span>
+          </li>
+          <li class="stat reveal" style="--d:3">
+            <span class="stat-num"><span data-count="5">5</span></span>
+            <span class="stat-label">Cloud environments unified for FinOps</span>
+          </li>
+          <li class="stat reveal" style="--d:4">
+            <span class="stat-num"><span data-count="6">6</span></span>
+            <span class="stat-label">Stage autonomous SRE agent workflow</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">01 · About</span>
+          <h2 class="section-title">AI that doesn't just answer — it <em>acts</em>.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead">AI &amp; ML Engineer with 3+ years of experience building scalable applications, machine learning solutions and AI applications.</p>
+            <p>I work hands-on with <strong>Agentic AI, LLMs, RAG, LangGraph and MCP</strong>, applying them to cloud operations, incident management, root-cause analysis and automated remediation.</p>
+            <p>I'm proficient in Python, FastAPI, Django, machine learning, deep learning, data engineering and multi-cloud technologies, from data pipelines and REST APIs through to production AI agents.</p>
+          </div>
+
+          <div class="focus-grid">
+            <article class="card focus-card reveal" style="--d:1">
+              <span class="focus-icon"><svg class="icon"><use href="#i-bot"/></svg></span>
+              <h3>Agentic AI &amp; LLMs</h3>
+              <p>LangGraph agents, MCP servers and LLM workflows for incident detection, RCA and automated remediation.</p>
+            </article>
+            <article class="card focus-card reveal" style="--d:2">
+              <span class="focus-icon"><svg class="icon"><use href="#i-trend"/></svg></span>
+              <h3>Machine Learning</h3>
+              <p>Machine learning, deep learning and time-series models for sales forecasting and trend prediction.</p>
+            </article>
+            <article class="card focus-card reveal" style="--d:3">
+              <span class="focus-icon"><svg class="icon"><use href="#i-server"/></svg></span>
+              <h3>Backend &amp; APIs</h3>
+              <p>FastAPI and Django services for billing, FinOps and enterprise data, secured with RBAC, caching and rate limiting.</p>
+            </article>
+            <article class="card focus-card reveal" style="--d:4">
+              <span class="focus-icon"><svg class="icon"><use href="#i-database"/></svg></span>
+              <h3>Data Engineering</h3>
+              <p>Spark, Kafka, Hive and Hadoop pipelines for data migration, streaming and analytics.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Experience ===== -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">02 · Experience</span>
+          <h2 class="section-title">Where I've been building.</h2>
+        </div>
+
+        <article class="card exp-card reveal">
+          <aside class="exp-side">
+            <span class="exp-icon"><svg class="icon"><use href="#i-briefcase"/></svg></span>
+            <h3 class="exp-role">AI ML Engineer</h3>
+            <p class="exp-company">Xaasio Pvt Ltd</p>
+            <ul class="exp-meta">
+              <li><svg class="icon"><use href="#i-calendar"/></svg> July 2023 – Present</li>
+              <li><svg class="icon"><use href="#i-pin"/></svg> Coimbatore, India</li>
+            </ul>
+            <span class="badge-live"><span class="pulse" aria-hidden="true"></span> Current role</span>
+          </aside>
+
+          <div class="exp-body">
+            <ul class="exp-list">
+              <li>Developed scalable <strong>Python, Django and FastAPI</strong> applications for enterprise data, cloud, billing and AI-driven solutions.</li>
+              <li>Developed <strong>Machine Learning, Deep Learning, Generative AI, RAG and Agentic AI</strong> solutions for forecasting, knowledge retrieval, automation and intelligent operations.</li>
+              <li>Built <strong>BSS and FinOps</strong> solutions for multi-cloud billing, pricing, cost visibility, resource-level cost analysis and optimisation across public cloud and on-premises environments.</li>
+              <li>Developed an <strong>AI-powered BSS/CMP Assistant</strong> using LLMs and agent-based workflows for natural-language cloud and FinOps operations.</li>
+              <li>Developed an <strong>OpenStack SRE Agent</strong> using LangGraph, MCP, LLMs and automation to enable node-level incident detection, root-cause analysis, remediation and health verification.</li>
+              <li>Designed <strong>data processing pipelines, REST APIs</strong>, database integrations and automation workflows to deliver scalable enterprise solutions.</li>
+            </ul>
+            <ul class="tags" aria-label="Technologies used">
+              <li class="tag">Python</li><li class="tag">FastAPI</li><li class="tag">Django</li><li class="tag">LLMs</li>
+              <li class="tag">RAG</li><li class="tag">LangGraph</li><li class="tag">MCP</li><li class="tag">FinOps</li><li class="tag">Multi-cloud</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">03 · Projects</span>
+          <h2 class="section-title">Selected work.</h2>
+          <p class="section-sub">Enterprise systems spanning data platforms, autonomous infrastructure agents, AI-assisted FinOps, disaster recovery and self-service databases.</p>
+        </div>
+
+        <div class="projects">
+
+          <!-- Project A -->
+          <article class="card project reveal">
+            <div class="project-main">
+              <div class="project-top">
+                <span class="project-index">A</span>
+                <span class="project-type">Data Platform · Forecasting · RAG</span>
+              </div>
+              <h3>Wing AI Application</h3>
+              <p class="project-desc">Data migration from an SAP system to Hive, covering data processing, custom business logic, data streaming, sales forecasting, a tailor-made application and data-visualisation dashboards.</p>
+              <ul class="highlights">
+                <li class="highlight"><strong>214</strong><span>Custom reports</span></li>
+                <li class="highlight"><strong>SAP → Hive</strong><span>Data migration</span></li>
+                <li class="highlight"><strong>NL → SQL</strong><span>RAG chatbot</span></li>
+              </ul>
+              <ul class="tags" aria-label="Technologies used">
+                <li class="tag">SAP</li><li class="tag">Hive</li><li class="tag">Django</li><li class="tag">LDAP / AD</li>
+                <li class="tag">Deep Learning</li><li class="tag">Time Series</li><li class="tag">RAG</li><li class="tag">Dashboards</li>
+              </ul>
+            </div>
+            <div class="project-details">
+              <h4>Key contributions</h4>
+              <ul class="check-list">
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Managed data migration from SAP to Hive, cleaned datasets and built custom logic for 214 reports aligned with business requirements.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Applied machine learning and deep learning techniques for sales forecasting, including time-series analysis for trend prediction.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Developed a tailor-made application using the Django framework, integrated with LDAP / Active Directory for user authentication.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Built a RAG (Retrieval-Augmented Generation) application for user queries, supporting general chatbot functionality and natural-language-to-SQL conversion.</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Project B -->
+          <article class="card project project-featured reveal">
+            <div class="project-main">
+              <div class="project-top">
+                <span class="project-index">B</span>
+                <span class="project-type">Agentic AI · SRE · OpenStack</span>
+              </div>
+              <h3>OpenSRE Agent</h3>
+              <p class="project-desc">An Agentic AI-powered OpenStack SRE Agent for node-level incident detection, root-cause analysis (RCA), automated remediation and infrastructure health verification.</p>
+              <ul class="highlights">
+                <li class="highlight"><strong>6-stage</strong><span>Autonomous workflow</span></li>
+                <li class="highlight"><strong>MCP</strong><span>Custom OpenStack server</span></li>
+                <li class="highlight"><strong>3 layers</strong><span>Controller · Compute · Network</span></li>
+              </ul>
+              <ul class="tags" aria-label="Technologies used">
+                <li class="tag">Python</li><li class="tag">LangGraph</li><li class="tag">LLMs</li><li class="tag">MCP</li>
+                <li class="tag">OpenStack</li><li class="tag">Ansible</li><li class="tag">Prometheus</li>
+              </ul>
+            </div>
+            <div class="project-details">
+              <h4>Key contributions</h4>
+              <ul class="check-list">
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Developed an Agentic AI workflow using Python, LangGraph, LLMs, MCP, Ansible and OpenStack APIs for automated incident management.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Implemented OpenStack node-level incident detection and RCA across controller, compute and network infrastructure.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Integrated Prometheus metrics, logs, service health and OpenStack events for incident investigation and root-cause analysis.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Developed an OpenStack MCP Server to expose infrastructure monitoring, diagnostic and remediation operations as AI tools.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Integrated Ansible automation to execute corrective actions and remediate identified infrastructure issues.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Implemented the complete Detect → Investigate → RCA → Remediate → Execute → Verify workflow with guardrails and post-remediation health checks.</span></li>
+              </ul>
+            </div>
+
+            <div class="pipeline-wrap">
+              <div class="pipeline-head">
+                <span class="pipeline-title">Agent workflow</span>
+                <span class="pipeline-status" aria-hidden="true"><span class="pulse"></span><span id="pipeline-status-text">node healthy</span></span>
+              </div>
+              <ol class="pipeline" aria-label="Agent workflow: Detect, Investigate, RCA, Remediate, Execute, Verify">
+                <li class="pipe-step done"><span class="pipe-node"><span class="pipe-n">1</span><svg class="icon"><use href="#i-check"/></svg></span><span class="pipe-label">Detect</span><span class="pipe-sub">Node-level alerts &amp; events</span></li>
+                <li class="pipe-step done"><span class="pipe-node"><span class="pipe-n">2</span><svg class="icon"><use href="#i-check"/></svg></span><span class="pipe-label">Investigate</span><span class="pipe-sub">Metrics, logs &amp; service health</span></li>
+                <li class="pipe-step done"><span class="pipe-node"><span class="pipe-n">3</span><svg class="icon"><use href="#i-check"/></svg></span><span class="pipe-label">RCA</span><span class="pipe-sub">LLM-driven root cause</span></li>
+                <li class="pipe-step done"><span class="pipe-node"><span class="pipe-n">4</span><svg class="icon"><use href="#i-check"/></svg></span><span class="pipe-label">Remediate</span><span class="pipe-sub">Guard-railed fix plan</span></li>
+                <li class="pipe-step done"><span class="pipe-node"><span class="pipe-n">5</span><svg class="icon"><use href="#i-check"/></svg></span><span class="pipe-label">Execute</span><span class="pipe-sub">Ansible automation</span></li>
+                <li class="pipe-step done"><span class="pipe-node"><span class="pipe-n">6</span><svg class="icon"><use href="#i-check"/></svg></span><span class="pipe-label">Verify</span><span class="pipe-sub">Post-fix health checks</span></li>
+              </ol>
+            </div>
+          </article>
+
+          <!-- Project C -->
+          <article class="card project reveal">
+            <div class="project-main">
+              <div class="project-top">
+                <span class="project-index">C</span>
+                <span class="project-type">FinOps · Multi-cloud · AI Assistant</span>
+              </div>
+              <h3>BSS Application — FinOps &amp; AI Assistant</h3>
+              <p class="project-desc">A multi-cloud Business Support System (BSS) integrated with CMP for cloud billing, pricing, FinOps cost management and AI-powered cloud operations across public cloud and on-premises environments.</p>
+              <ul class="highlights">
+                <li class="highlight"><strong>5</strong><span>AWS · Azure · GCP · OCI · On-prem</span></li>
+                <li class="highlight"><strong>6</strong><span>Cost-analysis dimensions</span></li>
+                <li class="highlight"><strong>LLM</strong><span>FinOps assistant</span></li>
+              </ul>
+              <ul class="tags" aria-label="Technologies used">
+                <li class="tag">Python</li><li class="tag">FastAPI</li><li class="tag">SQLAlchemy</li><li class="tag">PostgreSQL</li>
+                <li class="tag">Valkey</li><li class="tag">RBAC</li><li class="tag">LLM Agents</li>
+              </ul>
+            </div>
+            <div class="project-details">
+              <h4>Key contributions</h4>
+              <ul class="check-list">
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Developed BSS and FinOps APIs using Python, FastAPI, SQLAlchemy and PostgreSQL for billing, pricing, resource management and cost analysis.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Built multi-cloud cost visibility and aggregation across AWS, Azure, GCP, Oracle Cloud and on-premises infrastructure.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Implemented cost analysis by organisation, project, provider, region, resource type and service with daily, weekly and monthly trends.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Implemented Valkey caching, rate limiting, RBAC and authorisation to improve API performance and secure FinOps functionality.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Developed an AI-powered BSS/CMP Assistant using LLM and agent workflows for natural-language interaction with cloud, billing and FinOps operations.</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Project D -->
+          <article class="card project reveal">
+            <div class="project-main">
+              <div class="project-top">
+                <span class="project-index">D</span>
+                <span class="project-type">Disaster Recovery · OpenStack · Automation</span>
+              </div>
+              <h3>OpenStack Disaster Recovery (DR) Automation Platform</h3>
+              <p class="project-role">Role: <strong>AI/Cloud Platform Engineer</strong></p>
+              <p class="project-desc">An automated OpenStack Disaster Recovery platform built with Python and FastAPI to orchestrate cross-region backup, replication, failover and failback across primary and secondary OpenStack clusters, without shared storage dependencies such as Ceph, NAS or SAN.</p>
+              <ul class="highlights">
+                <li class="highlight"><strong>Failover</strong><span>Secondary-region activation</span></li>
+                <li class="highlight"><strong>Failback</strong><span>Restore to primary region</span></li>
+                <li class="highlight"><strong>No SAN</strong><span>or Ceph / NAS dependency</span></li>
+              </ul>
+              <ul class="tags" aria-label="Technologies used">
+                <li class="tag">Python</li><li class="tag">FastAPI</li><li class="tag">OpenStack SDK</li><li class="tag">Cinder API</li>
+                <li class="tag">Nova API</li><li class="tag">PostgreSQL</li><li class="tag">REST APIs</li>
+              </ul>
+            </div>
+            <div class="project-details">
+              <h4>Key contributions</h4>
+              <ul class="check-list">
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Designed and developed FastAPI REST APIs to automate disaster recovery workflows across geographically distributed OpenStack regions.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Implemented Cinder volume snapshot management, incremental backup tracking and replication status monitoring.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Developed cross-region volume data replication workflows to maintain recovery-ready resources in secondary OpenStack clusters.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Automated failover operations using OpenStack SDK, Cinder and Nova APIs to provision and activate secondary-region resources during outages.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Implemented failback workflows to synchronise updated volume data and restore workloads to the recovered primary region.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Integrated PostgreSQL for DR operation tracking, recovery-state management and workflow status monitoring.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Implemented asynchronous task execution, error handling, logging and operation validation for long-running DR processes.</span></li>
+              </ul>
+              <div class="project-outcome">
+                <span class="outcome-label">Outcome</span>
+                <p>Built a centralised DR automation platform that reduced manual recovery effort, streamlined cross-region disaster recovery operations and improved infrastructure resilience and recovery readiness.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project E -->
+          <article class="card project reveal">
+            <div class="project-main">
+              <div class="project-top">
+                <span class="project-index">E</span>
+                <span class="project-type">DBaaS · IaC · Multi-cloud</span>
+              </div>
+              <h3>Database-as-a-Service (DBaaS) — Automated Database Provisioning Platform</h3>
+              <p class="project-role">Role: <strong>AI/Cloud Platform Engineer</strong></p>
+              <p class="project-desc">A Database-as-a-Service automation platform built with Python and FastAPI for self-service database provisioning and lifecycle management across OpenStack and OpenNebula. OpenTofu Infrastructure as Code (IaC) automates VM-based and container-based deployments in standalone, high-availability (HA) and multi-node architectures.</p>
+              <ul class="highlights">
+                <li class="highlight"><strong>3 engines</strong><span>PostgreSQL · MySQL · MongoDB</span></li>
+                <li class="highlight"><strong>VM + K8s</strong><span>VM &amp; container deployments</span></li>
+                <li class="highlight"><strong>HA-ready</strong><span>Standalone · multi&#8209;node · HA</span></li>
+              </ul>
+              <ul class="tags" aria-label="Technologies used">
+                <li class="tag">Python</li><li class="tag">FastAPI</li><li class="tag">OpenStack</li><li class="tag">OpenNebula</li>
+                <li class="tag">OpenTofu</li><li class="tag">Terraform</li><li class="tag">Docker</li><li class="tag">Kubernetes</li>
+                <li class="tag">Linux</li><li class="tag">PostgreSQL</li><li class="tag">MySQL</li><li class="tag">MongoDB</li><li class="tag">REST APIs</li>
+              </ul>
+            </div>
+            <div class="project-details">
+              <h4>Key contributions</h4>
+              <ul class="check-list">
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Developed self-service database provisioning APIs enabling users to configure database engines, versions, instance counts, HA options, custom ports, storage and authentication credentials.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Integrated OpenStack and OpenNebula APIs with FastAPI to automate infrastructure provisioning and resource lifecycle management.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Implemented OpenTofu-based IaC workflows to dynamically provision VMs based on user-defined database configurations.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Automated PostgreSQL, MySQL and MongoDB deployments, including package installation, dependency management, configuration and service initialisation.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Designed automated database deployment workflows for VM-based and Docker/Kubernetes container-based environments.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Implemented standalone, multi-node and HA-enabled database architectures to support different workload and availability requirements.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Developed multi-cluster provisioning workflows to deploy database resources across distributed cloud environments.</span></li>
+                <li><svg class="icon"><use href="#i-check"/></svg><span>Integrated provisioning status tracking, error handling and database lifecycle operations through centralised REST APIs.</span></li>
+              </ul>
+              <div class="project-outcome">
+                <span class="outcome-label">Outcome</span>
+                <p>Built a centralised DBaaS automation platform enabling self-service database provisioning, reducing manual infrastructure configuration and supporting scalable database deployments across multiple cloud environments.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">04 · Skills</span>
+          <h2 class="section-title">The toolkit.</h2>
+          <p class="section-sub">From model to API to pipeline to cluster: the stack I use to take AI ideas into production.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="card skill-card featured reveal" style="--d:1">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon"><use href="#i-sparkles"/></svg></span><h3>AI &amp; Data Science</h3></div>
+            <ul class="chips"><li class="chip">Machine Learning</li><li class="chip">Deep Learning</li><li class="chip">Generative AI</li><li class="chip">Agentic AI</li><li class="chip">Time-series Forecasting</li></ul>
+          </article>
+          <article class="card skill-card featured reveal" style="--d:2">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon"><use href="#i-bot"/></svg></span><h3>LLM Engineering</h3></div>
+            <ul class="chips"><li class="chip">LLMs</li><li class="chip">RAG</li><li class="chip">LangGraph</li><li class="chip">MCP</li><li class="chip">NL → SQL</li></ul>
+          </article>
+          <article class="card skill-card reveal" style="--d:1">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon"><use href="#i-server"/></svg></span><h3>Backend &amp; APIs</h3></div>
+            <ul class="chips"><li class="chip">Python</li><li class="chip">FastAPI</li><li class="chip">Django</li><li class="chip">Flask</li><li class="chip">Streamlit</li><li class="chip">SQLAlchemy</li></ul>
+          </article>
+          <article class="card skill-card reveal" style="--d:2">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon"><use href="#i-database"/></svg></span><h3>Databases</h3></div>
+            <ul class="chips"><li class="chip">PostgreSQL</li><li class="chip">MySQL</li><li class="chip">Hive</li><li class="chip">Redis</li><li class="chip">Valkey</li></ul>
+          </article>
+          <article class="card skill-card reveal" style="--d:3">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon"><use href="#i-network"/></svg></span><h3>Data Engineering</h3></div>
+            <ul class="chips"><li class="chip">Spark</li><li class="chip">Spark Streaming</li><li class="chip">Kafka</li><li class="chip">pandas</li><li class="chip">Hadoop</li><li class="chip">MinIO S3</li></ul>
+          </article>
+          <article class="card skill-card reveal" style="--d:1">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon"><use href="#i-cloud"/></svg></span><h3>Cloud Platforms</h3></div>
+            <ul class="chips"><li class="chip">AWS</li><li class="chip">Azure</li><li class="chip">GCP</li><li class="chip">Oracle Cloud</li><li class="chip">OpenStack</li></ul>
+          </article>
+          <article class="card skill-card reveal" style="--d:2">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon"><use href="#i-layers"/></svg></span><h3>Containers &amp; Platforms</h3></div>
+            <ul class="chips"><li class="chip">Docker</li><li class="chip">Kubernetes</li><li class="chip">Linux</li><li class="chip">Windows</li></ul>
+          </article>
+          <article class="card skill-card reveal" style="--d:3">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon"><use href="#i-git"/></svg></span><h3>CI/CD &amp; Automation</h3></div>
+            <ul class="chips"><li class="chip">GitLab</li><li class="chip">Jenkins</li><li class="chip">Ansible</li><li class="chip">Prometheus</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">05 · Education</span>
+          <h2 class="section-title">Academic background.</h2>
+        </div>
+
+        <div class="edu-grid">
+          <article class="card edu-card reveal" style="--d:1">
+            <div class="edu-top">
+              <span class="edu-icon"><svg class="icon"><use href="#i-cap"/></svg></span>
+              <span class="edu-period">Nov 2021 – Apr 2023</span>
+            </div>
+            <h3>Master of Business Administration (MBA)</h3>
+            <p class="edu-school">Karpagam College of Engineering · Coimbatore</p>
+            <div class="cgpa">
+              <span class="cgpa-label">CGPA</span>
+              <span class="cgpa-bar" aria-hidden="true"><span class="cgpa-fill" style="--v:7.9"></span></span>
+              <span class="cgpa-value">7.9</span>
+            </div>
+          </article>
+
+          <article class="card edu-card reveal" style="--d:2">
+            <div class="edu-top">
+              <span class="edu-icon"><svg class="icon"><use href="#i-cap"/></svg></span>
+              <span class="edu-period">June 2018 – Apr 2021</span>
+            </div>
+            <h3>B.Sc. Information Technology</h3>
+            <p class="edu-school">The American College · Madurai</p>
+            <div class="cgpa">
+              <span class="cgpa-label">CGPA</span>
+              <span class="cgpa-bar" aria-hidden="true"><span class="cgpa-fill" style="--v:7.8"></span></span>
+              <span class="cgpa-value">7.8</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section section-contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="contact-copy">
+            <span class="kicker">06 · Contact</span>
+            <h2 class="section-title">Let's build something <em>intelligent</em>.</h2>
+            <p class="section-sub">Have a project, role or idea involving AI, data or cloud automation? I'd love to hear about it. Email is the quickest way to reach me.</p>
+            <a class="btn btn-primary" href="mailto:rajmathew821@gmail.com">Say hello <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+          </div>
+
+          <ul class="contact-list">
+            <li class="contact-item">
+              <span class="ci-icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+              <span class="ci-text">
+                <span class="ci-label">Email</span>
+                <a class="ci-value" href="mailto:rajmathew821@gmail.com">rajmathew821@gmail.com</a>
+              </span>
+              <button class="icon-btn copy-btn" type="button" data-copy="rajmathew821@gmail.com" aria-label="Copy email address">
+                <svg class="icon"><use href="#i-copy"/></svg>
+              </button>
+            </li>
+            <li class="contact-item">
+              <span class="ci-icon"><svg class="icon"><use href="#i-phone"/></svg></span>
+              <span class="ci-text">
+                <span class="ci-label">Phone</span>
+                <a class="ci-value" href="tel:+916383400140">+91 63834 00140</a>
+              </span>
+              <button class="icon-btn copy-btn" type="button" data-copy="+91 6383400140" aria-label="Copy phone number">
+                <svg class="icon"><use href="#i-copy"/></svg>
+              </button>
+            </li>
+            <li class="contact-item">
+              <span class="ci-icon"><svg class="icon"><use href="#i-pin"/></svg></span>
+              <span class="ci-text">
+                <span class="ci-label">Location</span>
+                <span class="ci-value">Coimbatore, Tamil Nadu, India</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Antony Raj A. All rights reserved.</p>
+      <p class="footer-built">Built with HTML, CSS &amp; JavaScript.</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="icon-btn to-top" type="button" aria-label="Back to top">
+    <svg class="icon"><use href="#i-arrow-up"/></svg>
+  </button>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
